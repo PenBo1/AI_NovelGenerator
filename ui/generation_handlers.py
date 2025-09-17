@@ -445,8 +445,6 @@ def do_consistency_check(self):
             self.enable_button_safe(self.btn_check_consistency)
     threading.Thread(target=task, daemon=True).start()
 def generate_batch_ui(self):
-
-    # PenBo 优化界面，使用customtkinter进行批量生成章节界面
     def open_batch_dialog():
         dialog = ctk.CTkToplevel()
         dialog.title("批量生成章节")
@@ -533,7 +531,7 @@ def generate_batch_ui(self):
         dialog.wait_window(dialog)
         return result
     
-    def generate_chapter_batch(self ,i ,word, min, auto_enrich):
+    def generate_chapter_batch(self, i, word, min, auto_enrich):
         draft_interface_format = self.loaded_config["llm_configs"][self.prompt_draft_llm_var.get()]["interface_format"]
         draft_api_key = self.loaded_config["llm_configs"][self.prompt_draft_llm_var.get()]["api_key"]
         draft_base_url = self.loaded_config["llm_configs"][self.prompt_draft_llm_var.get()]["base_url"]
@@ -682,14 +680,28 @@ def generate_batch_ui(self):
             timeout=finalize_timeout
         )
 
+    def task():
+        self.disable_button_safe(self.btn_batch_generate)
+        try:
+            result = open_batch_dialog()
+            if result["close"]:
+                return
 
-    result = open_batch_dialog()
-    if result["close"]:
-        return
-
-    for i in range(int(result["start"]), int(result["end"]) + 1):
-        generate_chapter_batch(self, i, int(result["word"]), int(result["min"]), result["auto_enrich"])
-
+            self.safe_log(f"开始批量生成章节 {result['start']} 到 {result['end']}...")
+            
+            for i in range(int(result["start"]), int(result["end"]) + 1):
+                self.safe_log(f"正在生成第 {i} 章...")
+                generate_chapter_batch(self, i, int(result["word"]), int(result["min"]), result["auto_enrich"])
+                self.safe_log(f"第 {i} 章生成完成")
+                
+            self.safe_log("所有章节批量生成完成！")
+        except Exception as e:
+            self.handle_exception("批量生成章节时出错")
+        finally:
+            self.enable_button_safe(self.btn_batch_generate)
+            
+    # 在新线程中执行任务，避免阻塞UI
+    threading.Thread(target=task, daemon=True).start()
 
 def import_knowledge_handler(self):
     selected_file = tk.filedialog.askopenfilename(

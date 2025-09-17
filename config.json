@@ -1,0 +1,92 @@
+{
+    "last_interface_format": "OpenAI",
+    "last_embedding_interface_format": "SiliconFlow",
+    "llm_configs": {
+        "DeepSeek V3": {
+            "api_key": "",
+            "base_url": "https://api.deepseek.com/v1",
+            "model_name": "deepseek-chat",
+            "temperature": 0.7,
+            "max_tokens": 8192,
+            "timeout": 600,
+            "interface_format": "OpenAI",
+            "updated_at": "2025-09-08T16:30:34.478483"
+        },
+        "GPT 5": {
+            "api_key": "",
+            "base_url": "https://api.openai.com/v1",
+            "model_name": "gpt-5",
+            "temperature": 0.7,
+            "max_tokens": 32768,
+            "timeout": 600,
+            "interface_format": "OpenAI"
+        },
+        "Gemini 2.5 Pro": {
+            "api_key": "",
+            "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+            "model_name": "gemini-2.5-pro",
+            "temperature": 0.7,
+            "max_tokens": 32768,
+            "timeout": 600,
+            "interface_format": "OpenAI"
+        },
+        "gemini-2.5-flash": {
+            "id": "6c4c6e31-47cc-4fef-80f9-f6891ecff0c3",
+            "api_key": "AIzaSyBOlpSPPrKuje_69xZ0UEcvye9Ws9lFyow",
+            "base_url": "",
+            "model_name": "gemini-2.5-flash",
+            "temperature": 0.7,
+            "max_tokens": 8192,
+            "timeout": 600,
+            "interface_format": "Gemini",
+            "created_at": "2025-09-08T15:06:17.626496",
+            "updated_at": "2025-09-08T15:32:39.772878"
+        }
+    },
+    "embedding_configs": {
+        "OpenAI": {
+            "api_key": "",
+            "base_url": "https://api.openai.com/v1",
+            "model_name": "text-embedding-ada-002",
+            "retrieval_k": 4,
+            "interface_format": "OpenAI"
+        },
+        "SiliconFlow": {
+            "api_key": "sk-uswcgjdztflghrrtyrtphdksvjmojoggsotteiijydfqeiwk",
+            "base_url": "https://api.siliconflow.cn/v1/embeddings",
+            "model_name": "BAAI/bge-m3",
+            "retrieval_k": 4,
+            "interface_format": "SiliconFlow"
+        }
+    },
+    "other_params": {
+        "topic": "# 📕 小说设定方案\n\n## 书名\n\n《诡异复燃》\n\n## 一句话简介（番茄平台短简介）\n\n**当灵异复燃，诡物觉醒，他必须用生命与理智为代价，和鬼同眠！**\n\n## 长简介（平台展示用）\n\n三年前，一次深夜的档案馆火灾，让林渊捡到了一块“死者眼睛”般的铜片。\n从那一刻起，他的人生被推向了另一条轨迹：\n\n* 鬼在复燃，人性崩塌；\n* 能力是借来的，代价是必死的；\n* 每一次出手，都可能被异灵反噬。\n\n在城市的阴影里，有组织、黑市、财团、疯子，他们把鬼物当作筹码，把活人当作容器。\n而林渊唯一能做的，就是用自己逐渐冷却的灵魂，去对抗那些逼近的复燃之物。\n\n当最后的倒计时响起，他才明白——\n**活下去，不是胜利，而是更深的诅咒。**\n\n---\n\n# 🌑 世界观设定\n\n### 1. 世界背景\n\n* **复燃**：现代都市背景，三年前世界各地出现无法科学解释的“灵异事件”。人称“复燃”——死去的东西，重新燃起，化作怪物。\n* **灵异规律**：鬼物出现必然伴随规则（范围、触发条件、禁忌）。破解规律等于延命，违背规则等于死亡。\n* **驱鬼者**：个别人类通过“契约物”获得对抗鬼物的能力，但能力本身带来**腐蚀**（如理智流失、寿命缩短、逐渐鬼化）。\n\n### 2. 能力体系\n\n* **寄宿物**：每个驱鬼者必须绑定一个“灵异物”，才能获得生存权。灵异物是复燃的残片：棺材钉、纸人、镜子、布偶……\n* **代价平衡**：力量越强，腐蚀越快。驱鬼者必须不断寻找“替代容器”来延长寿命，或通过冒险副本来转移代价。\n* **灵异副本**：城市中会出现“局部诡域”（地铁、废楼、医院、校园等），进入即触发副本，必须遵守诡异规则才能活着出来。\n\n### 3. 阵营与冲突\n\n* **镇灵局**：官方机构，收拢驱鬼者，维持表面秩序。\n* **影市**：黑暗组织，拍卖灵异物，买卖寄宿者。\n* **弃子**：被放弃的驱鬼者，他们走在彻底鬼化的边缘，游离在黑白之间。\n* **主角定位**：林渊既是被动寄宿的幸存者，也是唯一可能找到“真正终止复燃方法”的人。\n\n---\n\n# 🔥 叙事风格与番茄节奏优化\n\n* **短章 + 强钩子**：每章1500字左右，结尾必留悬念（鬼出现、倒计时、反转）。\n* **强烈代价感**：主角每次出手都会付出真实代价（流血、失忆、鬼化），读者持续感到紧张。\n* **副本化结构**：一卷一个副本（30–40章），既能收尾，又能留下长线。\n* **情感共鸣**：引入亲情/友情/背叛，配角会牺牲，制造读者的情绪拉扯。\n\n---",
+        "genre": "都市灵异 / 悬疑惊悚、无限流 / 副本制、恐怖惊悚、异能生存 / 能力代价流",
+        "num_chapters": 247,
+        "word_number": 3500,
+        "filepath": "E:/.repository/.novel/《诡异复燃》",
+        "chapter_num": "1",
+        "user_guidance": "",
+        "characters_involved": "",
+        "key_items": "",
+        "scene_location": "",
+        "time_constraint": ""
+    },
+    "choose_configs": {
+        "prompt_draft_llm": "gemini-2.5-flash",
+        "chapter_outline_llm": "gemini-2.5-flash",
+        "architecture_llm": "gemini-2.5-flash",
+        "final_chapter_llm": "gemini-2.5-flash",
+        "consistency_review_llm": "gemini-2.5-flash"
+    },
+    "proxy_setting": {
+        "proxy_url": "bridge7.ipipv.com",
+        "proxy_port": "7404",
+        "enabled": true
+    },
+    "webdav_config": {
+        "webdav_url": "",
+        "webdav_username": "",
+        "webdav_password": ""
+    }
+}

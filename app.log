@@ -1,0 +1,122 @@
+2025-09-08 15:32:52 - root - ERROR - 生成小说架构时出错
+Traceback (most recent call last):
+  File "E:\.repository\AI_NovelGenerator-main\ui\generation_handlers.py", line 57, in task
+    Novel_architecture_generate(
+  File "E:\.repository\AI_NovelGenerator-main\novel_generator\architecture.py", line 86, in Novel_architecture_generate
+    llm_adapter = create_llm_adapter(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "E:\.repository\AI_NovelGenerator-main\llm_adapters.py", line 408, in create_llm_adapter
+    return OpenAIAdapter(api_key, base_url, model_name, max_tokens, temperature, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\.repository\AI_NovelGenerator-main\llm_adapters.py", line 83, in __init__
+    self._client = ChatOpenAI(
+                   ^^^^^^^^^^^
+  File "E:\.repository\AI_NovelGenerator-main\.venv\Lib\site-packages\langchain_core\load\serializable.py", line 130, in __init__
+    super().__init__(*args, **kwargs)
+  File "E:\.repository\AI_NovelGenerator-main\.venv\Lib\site-packages\pydantic\main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\.repository\AI_NovelGenerator-main\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 792, in validate_environment
+    self.root_client = openai.OpenAI(**client_params, **sync_specific)  # type: ignore[arg-type]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\.repository\AI_NovelGenerator-main\.venv\Lib\site-packages\openai\_client.py", line 135, in __init__
+    raise OpenAIError(
+openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+
+2025-09-08 15:34:18 - root - INFO - Step1: Generating core_seed_prompt (核心种子) ...
+2025-09-08 15:34:29 - root - INFO - Step2: Generating character_dynamics_prompt ...
+2025-09-08 15:35:19 - root - INFO - Generating initial character state from character dynamics ...
+2025-09-08 15:35:41 - root - INFO - Initial character state created and saved.
+2025-09-08 15:35:41 - root - INFO - Step3: Generating world_building_prompt ...
+2025-09-08 15:36:27 - root - INFO - Step4: Generating plot_architecture_prompt ...
+2025-09-08 15:37:14 - root - INFO - Novel_architecture.txt has been generated successfully.
+2025-09-08 15:37:14 - root - INFO - partial_architecture.json removed (all steps completed).
+2025-09-08 15:38:34 - root - INFO - Number of chapters = 247, computed chunk_size = 30.
+2025-09-08 15:38:34 - root - INFO - Will generate chapter blueprint in chunked mode from scratch.
+2025-09-08 15:38:34 - root - INFO - Generating chapters [1..30] in a chunk...
+2025-09-08 15:39:12 - root - INFO - Generating chapters [31..60] in a chunk...
+2025-09-08 15:39:55 - root - INFO - Generating chapters [61..90] in a chunk...
+2025-09-08 15:40:38 - root - INFO - Generating chapters [91..120] in a chunk...
+2025-09-08 15:41:12 - root - INFO - Generating chapters [121..150] in a chunk...
+2025-09-08 15:41:55 - root - INFO - Generating chapters [151..180] in a chunk...
+2025-09-08 15:42:30 - root - INFO - Generating chapters [181..210] in a chunk...
+2025-09-08 15:43:18 - root - INFO - Generating chapters [211..240] in a chunk...
+2025-09-08 15:44:04 - root - INFO - Generating chapters [241..247] in a chunk...
+2025-09-08 15:44:21 - root - INFO - Novel_directory.txt (chapter blueprint) has been generated successfully (chunked).
+2025-09-08 16:20:24 - root - INFO - [Draft] Chapter 1 generated as a draft.
+2025-09-08 16:25:07 - root - INFO - Attempting to generate summary
+2025-09-08 16:51:28 - root - INFO - [Draft] Chapter 1 generated as a draft.
+2025-09-08 16:52:14 - root - INFO - Vector store not found. Will return None.
+2025-09-08 16:52:14 - root - INFO - Vector store does not exist or failed to load. Initializing a new one for new chapter...
+2025-09-08 16:52:18 - root - INFO - New vector store created successfully.
+2025-09-08 16:52:18 - root - INFO - Chapter 1 has been finalized.
+2025-09-08 16:52:18 - root - INFO - Attempting to generate summary
+2025-09-08 16:52:38 - root - INFO - Summary generated successfully
+2025-09-08 16:54:12 - root - INFO - [Draft] Chapter 2 generated as a draft.
+2025-09-08 16:55:28 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 16:55:28 - root - INFO - Chapter 2 has been finalized.
+2025-09-08 16:55:28 - root - INFO - Attempting to generate summary
+2025-09-08 16:55:49 - root - INFO - Summary generated successfully
+2025-09-08 16:57:45 - root - INFO - [Draft] Chapter 3 generated as a draft.
+2025-09-08 16:58:38 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 16:58:38 - root - INFO - Chapter 3 has been finalized.
+2025-09-08 16:58:38 - root - INFO - Attempting to generate summary
+2025-09-08 16:59:02 - root - INFO - Summary generated successfully
+2025-09-08 17:00:15 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:01:25 - root - INFO - [Draft] Chapter 4 generated as a draft.
+2025-09-08 17:02:42 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:02:42 - root - INFO - Chapter 4 has been finalized.
+2025-09-08 17:02:42 - root - INFO - Attempting to generate summary
+2025-09-08 17:03:19 - root - INFO - Summary generated successfully
+2025-09-08 17:04:36 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:05:16 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:05:56 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:06:46 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:07:28 - root - INFO - [Draft] Chapter 5 generated as a draft.
+2025-09-08 17:08:32 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:08:32 - root - INFO - Chapter 5 has been finalized.
+2025-09-08 17:08:32 - root - INFO - Attempting to generate summary
+2025-09-08 17:08:53 - root - INFO - Summary generated successfully
+2025-09-08 17:10:49 - root - ERROR - SiliconFlow API request failed: Response ended prematurely
+2025-09-08 17:10:49 - root - WARNING - Similarity search failed: list index out of range in query.
+2025-09-08 17:11:31 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:12:08 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:14:07 - root - INFO - [Draft] Chapter 6 generated as a draft.
+2025-09-08 17:15:33 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:15:33 - root - INFO - Chapter 6 has been finalized.
+2025-09-08 17:15:33 - root - INFO - Attempting to generate summary
+2025-09-08 17:15:57 - root - INFO - Summary generated successfully
+2025-09-08 17:17:25 - root - ERROR - SiliconFlow API request failed: Response ended prematurely
+2025-09-08 17:17:25 - root - WARNING - Similarity search failed: list index out of range in query.
+2025-09-08 17:18:54 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.
+2025-09-08 17:19:26 - root - INFO - [Draft] Chapter 7 generated as a draft.
+2025-09-08 17:20:32 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:20:32 - root - INFO - Chapter 7 has been finalized.
+2025-09-08 17:20:32 - root - INFO - Attempting to generate summary
+2025-09-08 17:20:57 - root - INFO - Summary generated successfully
+2025-09-08 17:22:21 - root - INFO - [Draft] Chapter 8 generated as a draft.
+2025-09-08 17:23:41 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:23:41 - root - INFO - Chapter 8 has been finalized.
+2025-09-08 17:23:42 - root - INFO - Attempting to generate summary
+2025-09-08 17:24:07 - root - INFO - Summary generated successfully
+2025-09-08 17:25:48 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:26:28 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:27:08 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:27:33 - root - INFO - [Draft] Chapter 9 generated as a draft.
+2025-09-08 17:28:41 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:28:41 - root - INFO - Chapter 9 has been finalized.
+2025-09-08 17:28:41 - root - INFO - Attempting to generate summary
+2025-09-08 17:28:58 - root - INFO - Summary generated successfully
+2025-09-08 17:31:24 - root - INFO - [Draft] Chapter 10 generated as a draft.
+2025-09-08 17:32:45 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:32:45 - root - INFO - Chapter 10 has been finalized.
+2025-09-08 17:32:45 - root - INFO - Attempting to generate summary
+2025-09-08 17:32:58 - root - INFO - Summary generated successfully
+2025-09-08 17:34:00 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:34:40 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:35:18 - root - ERROR - Gemini API 调用失败: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.
+2025-09-08 17:35:54 - root - INFO - [Draft] Chapter 11 generated as a draft.
+2025-09-08 17:37:08 - root - INFO - Vector store updated with the new chapter splitted segments.
+2025-09-08 17:37:08 - root - INFO - Chapter 11 has been finalized.
+2025-09-08 17:37:08 - root - INFO - Attempting to generate summary
+2025-09-08 17:38:40 - root - INFO - Summary generated successfully
